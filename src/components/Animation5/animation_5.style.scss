@@ -1,0 +1,279 @@
+@import '../globals/responsive';
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --red-color: rgb(209, 32, 45);
+    --red-text-shadow-color: rgb(209, 32, 45, 0.5);
+    --purple-color: rgb(151, 71, 255);
+    --light-blue-color: rgb(137, 198, 255);
+    --medium-blue-color: rgb(16, 76, 186);
+    --orange-color: rgb(255, 165, 0);
+    --parrot-green-color: rgb(0, 240, 118);
+    --light-green-color: rgb(221, 240, 0);
+    --dark-blue-color: rgb(22, 34, 48);
+
+    --text-heading-grey-color: rgb(44, 44, 44);
+    --text-heading--light-grey-color: rgb(51, 51, 51, 0.8);
+    --light-black-color: rgb(0, 0, 0, 0.15);
+
+    --container-border-width: 2px;
+}
+
+.star-end-div {
+    height: 100vh;
+    width: 100%;
+}
+
+.animation-5 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+
+    // Styles for the each row
+
+    .row {
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        // Styles for the container
+
+        .container {
+            flex: 0.33;
+            border-radius: 20px;
+            padding: 15px 25px;
+            background-color: white;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 0.1rem;
+
+            box-shadow: 0px 0px 5px 0px var(--light-black-color);
+            -webkit-box-shadow: 0px 0px 5px 0px var(--light-black-color);
+            -moz-box-shadow: 0px 0px 5px 0px var(--light-black-color);
+
+            h4,h3,p {
+                margin: 0;
+                padding: 0;
+            }
+
+            h4 {
+                margin-bottom: 4px;
+            }
+
+            h3 {
+                margin-bottom: 6px;
+            }            
+        }
+
+        // Responsiveness for container in medium size screens and onwards
+
+        @include md {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+    }
+
+    // Styles for Num, Heading and Paragraph
+
+    .cont-heading {
+        font-size: 30px;
+    }
+    .cont-paragraph {
+        font-size: 22px;
+        color: var(--text-heading--light-grey-color);
+    }
+    .cont-num {
+        font-size: 30px;
+    }
+
+    // Styles for row 1
+
+    #r1 {
+
+        #t-c { order: 1; }
+        #r1-c1 { order: 2; }
+        #r1-c2 { order: 3; }
+
+        #r1-c1 {
+            opacity: 0;
+            border-left: var(--container-border-width) solid var(--red-color);
+            .cont-num {
+                font-size: 30px;
+                color: var(--red-color)
+            }
+        }
+
+        #r1-c2 {
+            opacity: 0;
+            border-right: var(--container-border-width) solid var(--purple-color);
+            .cont-num {
+                font-size: 30px;
+                color: var(--purple-color)
+            }
+        }
+
+        .title-cont {
+            flex: 0.32;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                margin: 0;
+                text-shadow: 0 0 20px var(--red-text-shadow-color);
+            }
+
+            .title {
+                font-size: 43.65px;
+                text-align: center;
+                color: var(--red-color);
+            }
+        }
+
+        // Responsiveness for r1 in medium size screens and onwards
+
+        @include md {
+            #t-c { order: 2; }
+            #r1-c1 { order: 1; }
+            #r1-c2 { order: 3; }
+
+            #r1-c2 {
+                border-right: 0;
+                border-left: var(--container-border-width) solid var(--purple-color);
+            }
+        }
+    }
+
+    // Styles for row 2
+
+    #r2 {
+        justify-content: center;
+        align-items: center;
+
+        #r2-c1 {
+            opacity: 0;
+            flex: 0.32;
+            border-left: var(--container-border-width) solid var(--light-blue-color);            
+            .cont-num {
+                color: var(--light-blue-color)
+            }
+        }
+
+    }
+
+    // Styles for row 3
+
+    #r3 {
+
+        justify-content: space-between;
+
+        #r3-c1 {
+            opacity: 0;
+            flex: 0.32;
+            border-right: var(--container-border-width) solid var(--medium-blue-color);
+            .cont-num {
+                color: var(--medium-blue-color)
+            }
+        }
+
+        #r3-c2 {
+            opacity: 0;
+            flex: 0.32;
+            border-left: var(--container-border-width) solid var(--orange-color);
+            .cont-num {
+                color: var(--orange-color)
+            }
+        }
+
+        // Responsiveness for r3 in medium size screens and onwards
+
+        @include md {
+
+            #r3-c1 {
+                border-right: 0;
+                border-left: var(--container-border-width) solid var(--medium-blue-color);
+            }
+        }
+    }
+
+    // Styles for row 4
+
+    #r4 {
+        justify-content: center;
+        align-items: center;
+
+        #r4-c1 {
+            opacity: 0;
+            flex: 0.32;
+            border-right: var(--container-border-width) solid var(--parrot-green-color);
+            .cont-num {
+                color: var(--parrot-green-color)
+            }
+        }
+
+        // Responsiveness for r4 in medium size screens and onwards
+
+        @include md {
+
+            #r4-c1 {
+                border-right: 0;
+                border-left: var(--container-border-width) solid var(--parrot-green-color);
+            }
+        }
+
+    }
+
+    // Styles for row 5
+
+    #r5 {
+
+        justify-content: space-between;
+
+        #r5-c1 {
+            opacity: 0;
+            flex: 0.32;
+            border-left: var(--container-border-width) solid var(--light-green-color);
+            .cont-num {
+                color: var(---light-green-color)
+            }
+        }
+
+        #r5-c2 {
+            opacity: 0;
+            flex: 0.32;
+            border-right: var(--container-border-width) solid var(--dark-blue-color);
+            .cont-num {
+                color: var(--dark-blue-color)
+            }
+        }
+
+        // Responsiveness for r5 in medium size screens and onwards
+
+        @include md {
+
+            #r5-c2 {
+                border-right: 0;
+                border-left: var(--container-border-width) solid var(--dark-blue-color);
+            }
+        }
+    }
+
+    // Responsiveness for the Animation - 5 for medium size screens and onwards
+
+    @include md {
+        padding: 0 3rem;
+    }
+}
