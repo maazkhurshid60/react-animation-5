@@ -7,7 +7,6 @@ import anime from 'animejs/lib/anime.es'
 //Style Imports
 import './animation_5.style.scss';
 
-//Adding this line for git activity
 
 export default function Animation5Component() {
     const iconSize = 50
